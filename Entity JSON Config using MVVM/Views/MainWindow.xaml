@@ -1,0 +1,28 @@
+﻿<Window x:Class="Entity_JSON_Config_using_MVVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Entity_JSON_Config_using_MVVM"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="93*"/>
+            <ColumnDefinition Width="707*"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBox Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" Height="41"
+                 Text="{Binding EnteredData, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox HorizontalAlignment="Left" Margin="307,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" Height="340" Grid.Column="2"
+                 Text="{Binding DataToOutput, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Content="Input" HorizontalAlignment="Left" Margin="69,36,0,0" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="1.724,0.531" Grid.Column="2"/>
+        <Label Content="Output" HorizontalAlignment="Left" Margin="459,36,0,0" VerticalAlignment="Top" FontSize="24" Grid.Column="2"/>
+        <Button Content="Confirm" HorizontalAlignment="Left" Margin="41,157,0,0" VerticalAlignment="Top" Height="27" Width="122" Grid.Column="2"
+                Command="{Binding AddToDB}"/>
+        <Button Content="Clear All" HorizontalAlignment="Left" Margin="41,0,0,0" VerticalAlignment="Center" Height="27" Width="122" Grid.Column="2"
+                Command="{Binding ClearDB}"/>
+
+    </Grid>
+</Window>
